@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lunix-interractive</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p>Check node’s availability <em>[sinfo]</em></p>
+<blockquote>
+<p>sinfo</p>
+</blockquote>
+<p>allocate node <em>[ salloc, - partition name, - time]</em></p>
+<blockquote>
+<p>salloc -p defq -t 2-00:00:00</p>
+</blockquote>
+<p>Check jobs &amp; nodes in queue <em>[squeue, -user name]</em></p>
+<blockquote>
+<p>squeue -u adbe</p>
+</blockquote>
+<p>Connect to a node <em>[ssh, node name]</em></p>
+<blockquote>
+<p>ssh node134</p>
+</blockquote>
+<p>Run batch script: <em>[sbatch, script_name]</em></p>
+<blockquote>
+<p>sbatch my_script.sh</p>
+</blockquote>
+<p>Check Progress: <em>[list_files, currently running]</em></p>
+<blockquote>
+<p>ls -ltrh</p>
+</blockquote>
+<p>Check user’s node status <em>[account, user name]</em></p>
+<blockquote>
+<p>acct -u adbe</p>
+</blockquote>
+<p>Check memory in use <em>[account , user name, top]</em></p>
+<blockquote>
+<p>acct -u adbe top</p>
+</blockquote>
+<p>Close connection a node <em>[exit]</em></p>
+<blockquote>
+<p>exit</p>
+</blockquote>
+<p>Cancel a job <em>[scancel, job number]</em></p>
+<blockquote>
+<p>scancel 601356</p>
+</blockquote>
+<p>Create bash script <em>nano, file_name]</em></p>
+<blockquote>
+<p>nano my_script.sh</p>
+</blockquote>
+</div>
+</body>
+
+</html>
