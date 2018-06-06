@@ -22,7 +22,7 @@ Check user's node status *[account, user name]*
 Check memory in use *[account , user name, top]*
 > acct -u adbe top
 
-Close connection a node *[exit]*
+Close connection to a node *[exit]*
 > exit
 
 Cancel a job *[scancel, job number]*
