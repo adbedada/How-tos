@@ -32,5 +32,5 @@
 
 *gdalwarp: [shape file name, image to clip from, name of output]*
 
-	gdalwarp PAN_1_384.shp Sri_Lanka_2017_Mosaic_V2.tif Sri_Lanka_Clip_1_1_384.tif -co COMPRESS=LZW
+	gdalwarp -cutline PAN_1_384.shp -cutline Sri_Lanka_2017_Mosaic_V2.tif Sri_Lanka_Clip_1_1_384.tif -co COMPRESS=LZW
 
