@@ -32,9 +32,10 @@
 
 *gdalwarp: [shape file name, image to clip from, name of output]*
 
-	gdalwarp -cutline PAN_1_384.shp -crop_to_cutline Sri_Lanka_2017_Mosaic_V2.tif Sri_Lanka_Clip_1_1_384.tif -co COMPRESS=LZW
+	gdalwarp -cutline my_shapefile.shp -crop_to_cutline mytif_2018.tif mytif_2018_1.tif -co COMPRESS=LZW
 
 **Change the scale of image to 0-255**
+
 *gdal_translate:[Type of image, type of output, input scale, output scale, input data, output data]*
 
 	 gdal_translate -of GTiff -ot Byte -scale 0 1 0 255 input_image.tif output_image.tif 
