@@ -51,4 +51,4 @@ Export Image
 	scale:10,
 	crs: "EPSG:4326",
 	//maxPixels:2000000000 ( pass max value if needed)
-})
+	})
