@@ -1,4 +1,6 @@
-﻿Load Sentinel-2 TOA reflectance data
+
+ 
+ Load Sentinel-2 TOA reflectance data
 
 	var s2 = ee.ImageCollection('COPERNICUS/S2');
 
