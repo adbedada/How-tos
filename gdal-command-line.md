@@ -34,3 +34,20 @@
 
 	gdalwarp -cutline PAN_1_384.shp -crop_to_cutline Sri_Lanka_2017_Mosaic_V2.tif Sri_Lanka_Clip_1_1_384.tif -co COMPRESS=LZW
 
+**Change the scale of image to 0-255**
+*gdal_translate:[Type of image, type of output, input scale, output scale, input data, output data]*
+
+	 gdal_translate -of GTiff -ot Byte -scale 0 1 0 255 input_image.tif output_image.tif 
+
+**Convert greyscale image to RGBA**
+
+*gdaldem:[ function, type of data, input data, color palette, output data]*
+
+Create custom color palette like the on below and save the file as .txt file. 
+
+       0. 255 255 255 0
+       50. 255  0   0   50
+       100. 0  255  0   100
+       150. 0 0  255   150
+
+	gdaldem color-relief -of GTiff current_vacc_final_3.tif color.txt current_vacc_final_4.tif -alpha
