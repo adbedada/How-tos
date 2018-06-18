@@ -14,8 +14,9 @@ Create a function to mask clouds using the Sentinel-2 QA band
 	var qa = image.select('QA60');// QA = 60 meters
 	var cloudBitMask = ee.Number(2).pow(10).int();
 	var cirrusBitMask = ee.Number(2).pow(11).int();
+	
 	var mask = qa.bitwiseAnd(cloudBitMask).eq(0).and(
-					qa.bitwiseAnd(cirrusBitMask).eq(0));
+	           qa.bitwiseAnd(cirrusBitMask).eq(0));
 	
 	// Return the masked and scaled data
 	return image.updateMask(mask).divide(10000)
@@ -24,11 +25,11 @@ Create a function to mask clouds using the Sentinel-2 QA band
 
 Filter Data
 
-	var sr_collection = s2.filterDate('2017-01-01', '2018-03-31')
-						  .filterBounds(Sri_Lanka)
-					      .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 3))
-						  .map(maskS2clouds)
-						  .median()
+	var sr_collection = s2.filterDate('2017-01-01', '2017-12-31')
+			      .filterBounds(Sri_Lanka)
+			      .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 3))
+			      .map(maskS2clouds)
+			      .median()
 
 Select bands with 10 meters resolution
 
@@ -37,17 +38,17 @@ Select bands with 10 meters resolution
 Create a mosaic of image collections
 
 	var image = ee.ImageCollection([
-					sr_collection.select(bands),
-				]).mosaic();
+			sr_collection.select(bands),
+			]).mosaic();
 Visualize
 		
-	Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], max: 0.3}, 'Sentinel 2');
+	Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], max: 0.3}, 'Sentinel-2');
 
 Export Image
 
 	Export.image.toDrive({
 	image:image,
-	description:"SL_mosaic_2017",
+	description:"SR_mosaic_2017",
 	scale:10,
 	crs: "EPSG:4326",
 	//maxPixels:2000000000 ( pass max value if needed)
