@@ -41,13 +41,13 @@
 
 **Convert greyscale image to RGBA**
 
-*gdaldem:[ function, type of data, input data, color palette, output data]*
-
 Create custom color palette like the on below and save the file as .txt file. 
 
-       0. 255 255 255 0
-       50. 255  0   0   50
-       100. 0  255  0   100
-       150. 0 0  255   150
+       0.  255 255 255 0
+       50. 255  0   0  50
+       100. 0  255  0  100
+       150. 0   0  255 150
+
+*gdaldem:[ function, type of data, input data, color palette, output data]*
 
 	gdaldem color-relief -of GTiff current_vacc_final_3.tif color.txt current_vacc_final_4.tif -alpha
