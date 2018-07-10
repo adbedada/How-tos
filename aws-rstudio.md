@@ -16,7 +16,7 @@ Go to rstudio home directory and create .ssh folder. Change the file permission 
 	mkdir .ssh
 	chmod 700 .ssh
 	
-Create authorized keys, copy and paste the .pem private key use ssh-keygen -y or PuTTYgen to get private key
+Create authorized keys, copy and paste the .pem private key. Use ssh-keygen -y or PuTTYgen to get private key
 	
 	touch .ssh/authorized_keys
 	cd .ssh
