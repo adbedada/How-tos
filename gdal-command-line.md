@@ -15,7 +15,6 @@ _org2ogr: output format, output_file_name.json, inputshapefile.shp, json_data_fo
 
 ```
 ogr2ogr -f GeoJSON output.json input_shapefile.shp -lco RFC7946=YES
-
 ```
 
 **Changing the order of Bands**
@@ -54,7 +53,6 @@ _gdal_translate [output format,  option, input vrt, output_tiff file]_
 
 ```
 gdal_translate -b 2 -of GTiff -co "TILED=YES" image_layer.vrt extracted_band.tiff
-
 ```
 
 **Change the scale of image to 0-255**
