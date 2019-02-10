@@ -17,6 +17,13 @@ _org2ogr: output format, output_file_name.json, inputshapefile.shp, json_data_fo
 ogr2ogr -f GeoJSON output.json input_shapefile.shp -lco RFC7946=YES
 ```
 
+**merge multiple vector data/shapefiles into one file**  
+_orgmerge.py: -single -o, output_file_name.shp, input1.shp, input2.shp -src_layer_field_name xyz
+
+```
+ogrmerge.py -single merged_boundary.shp boundary_1.shp boundary_2.shp -src_layer_field_name BOUNDARY_TYPE
+```
+
 **Changing the order of Bands**
 
 *gdal_translate Input file name, output file name, Compression type, file type(size)*
